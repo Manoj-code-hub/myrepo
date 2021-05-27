@@ -13,7 +13,7 @@ pipeline {
         // Mounted external hard drive Named as D drive
         steps {
             dir("${WORKSPACE}") {
-                fileOperations([fileCopyOperation(excludes: '', flattenFiles: true, includes: '', targetLocation: "D:\\test")])
+                fileOperations([fileCopyOperation(excludes: '', flattenFiles: true, includes: '', targetLocation: "D:\\mike")])
 }
         }
 
