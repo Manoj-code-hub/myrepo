@@ -1,0 +1,22 @@
+pipeline {
+   agent any
+   stages {
+    stage('Checkout') {
+      steps {
+        script {
+           // The below will clone your repo and will be checked out to master branch by default.
+           git branch: 'main', credentialsId: 'Git', url: 'https://github.com/Manoj-code-hub/myrepo.git'
+          }
+       }
+    }
+    stage('copy') {
+        // Mounted external hard drive Named as D drive
+        steps {
+            dir("${WORKSPACE}") {
+                fileOperations([fileCopyOperation(excludes: '', flattenFiles: true, includes: '', targetLocation: "D:\\test")])
+}
+        }
+
+  }
+}
+}
